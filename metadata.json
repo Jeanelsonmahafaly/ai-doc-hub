@@ -1,0 +1,6 @@
+{
+  "name": "Digipepss Tech Hub - CaptureMind & VISIOfact",
+  "description": "Plateforme unifiée de pilotage technique et architectural pour CaptureMind HUB (IA sans persistance) et VISIOfact (Interopérabilité Peppol AS4 & Dossier DGFiP).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,517 @@
+Bonsoir Jean Elson,
+
+Je fais suite à nos derniers échanges concernant la refonte de CaptureMind et votre proposition d'étude comparative des nouvelles technologies de reconnaissance documentaire.
+
+Je souhaite vous transmettre les trois schémas fonctionnels joints, qui illustrent plus précisément ce que nous devons mettre en place. 
+
+Notre objectif va au-delà du simple remplacement du moteur OCR actuel. Nous souhaitons faire évoluer CaptureMind vers un véritable HUB intelligent de traitement documentaire et comptable, indépendant de FERnest, capable de comprendre les factures, d'identifier les tiers, d'appliquer les modèles comptables et de préparer les lignes d'écritures.
+
+Je souhaite vous apporter plusieurs précisions sur cette orientation.
+
+1. CaptureMind doit devenir un véritable HUB de traitement
+
+Le principe est de conserver deux environnements distincts :
+
+    FERnest, qui héberge la GED, les référentiels officiels des tiers, le plan comptable et les écritures définitives ;
+    CaptureMind, qui dispose de son propre moteur documentaire IA, de ses bibliothèques de connaissances et de ses modules de préparation comptable.
+
+Une facture est d'abord réceptionnée et conservée dans la GED FERnest, puis transmise temporairement à CaptureMind.
+
+CaptureMind doit ensuite effectuer l'ensemble des traitements nécessaires : reconnaissance du document, extraction des informations, identification du tiers, application des modèles comptables, détermination des comptes et construction des lignes d'écritures.
+
+Les résultats sont ensuite retournés à FERnest pour validation, enregistrement comptable et classement définitif de la pièce.
+
+2. CaptureMind doit disposer de ses propres bibliothèques intelligentes
+
+C'est un point sur lequel je souhaite particulièrement insister.
+
+Puisque les documents transiteront par CaptureMind, nous devons exploiter cette capacité pour constituer progressivement une bibliothèque de connaissances comptables performante qui déjà existant  chez Fernest.
+
+Je souhaite notamment que CaptureMind dispose :
+
+    D'une bibliothèque intelligente des tiers, permettant leur identification à partir du SIREN, du SIRET, du numéro de TVA, de la raison sociale et d'autres critères de rapprochement déjà existant chez Fernest ;
+    D'un module de modèles comptables, intégrant les règles d'imputation, les catégories de charges et produits, les règles de TVA et les particularités propres à chaque dossier, déjà existant chez Fernest ;
+    D'un moteur capable de déterminer les comptes appropriés et de préparer les écritures complètes au débit et au crédit ;
+    D'un mécanisme d'enrichissement progressif des connaissances à partir des traitements et des corrections validées.
+
+Par exemple, lorsqu'un fournisseur inconnu est identifié, CaptureMind doit pouvoir proposer sa création dans FERnest et, après validation, enrichir sa bibliothèque afin de faciliter sa reconnaissance lors des traitements suivants.
+
+Il en va de même pour les modèles comptables et les correspondances de comptes.
+
+Nous devons cependant distinguer les connaissances générales, réutilisables, des paramètres propres à chaque client ou dossier.
+
+3. Aucun stockage de factures sur le serveur CaptureMind
+
+Cette exigence est impérative et constitue l'un des principes fondamentaux de notre future architecture.
+
+CaptureMind doit être un HUB de traitement et de transit, et non une seconde GED.
+
+Aucune facture, aucun PDF, aucune image ni aucune donnée transactionnelle issue des documents ne doivent être conservés durablement sur son serveur.
+
+Le traitement documentaire doit s'effectuer en mémoire, sans persistance des documents, y compris dans les caches, journaux ou fichiers temporaires.
+
+FERnest conserve l'original et reste responsable des reprises en cas d'échec. Une fois les résultats transmis et leur réception confirmée, CaptureMind termine son intervention et libère les données temporaires.
+
+En revanche, CaptureMind peut naturellement conserver ses bibliothèques de tiers, ses modèles comptables et ses connaissances métier validées, dès lors qu'elles ne constituent pas un historique déguisé des factures traitées.
+
+Je souhaite que cette séparation soit prévue dès la conception et vérifiée techniquement, notamment en cas de panne ou d'interruption d'un traitement.
+
+4. Concernant votre proposition technologique
+
+Je souhaite conserver votre démarche consistant à comparer objectivement les trois approches envisagées :
+
+    L'analyse multimodale directe ;
+    L'association OCR et modèle de langage ;
+    L'architecture hybride, sélectionnant le traitement approprié selon le document.
+
+Les technologies que vous avez évoquées, notamment Qwen3-VL, PaddleOCR et les solutions d'extraction native des PDF et Factur-X, constituent des pistes intéressantes.
+
+Toutefois, aucun choix technologique ne doit être considéré comme définitif avant les essais.
+
+Nous devons également conserver notre exigence de solutions open source à licences permissives, permettant leur modification, leur intégration et leur commercialisation sans obligation de divulguer notre propre code.
+
+5. Organisation des essais sur une centaine de factures
+
+Nous allons mettre à votre disposition environ 100 factures représentatives.
+
+Ces documents devront être traités dans un environnement de test totalement indépendant de FERnest, sans connexion directe ou indirecte à ses bases de données, API ou référentiels.
+
+Le dispositif devra permettre de tester non seulement la reconnaissance des informations présentes sur les factures, mais également l'identification des tiers, l'application des modèles comptables et la préparation des écritures, à partir de référentiels de test autonomes.
+
+Je souhaite que nous puissions mesurer objectivement la précision de l'extraction, la fiabilité des écritures proposées, les temps de traitement et les ressources nécessaires.
+
+Il est également important que vous établissiez vos propres mesures et conclusions, sans vous laisser orienter par les résultats précédemment obtenus par Hasina. Ses travaux pourront être confrontés aux vôtres dans un second temps.
+
+6. Présentation du fonctionnement actuel par Monsieur Flore
+
+Veuillez vous rapprocher de Mr Flore qui va vous présenter de manière détaillée le fonctionnement actuel de CaptureMind.
+
+Cette présentation devra vous permettre de comprendre les règles métier, les mécanismes de reconnaissance, les modèles comptables, le rapprochement des tiers et la préparation des écritures.
+
+L'objectif n'est pas de reproduire l'architecture existante, mais d'identifier les fonctionnalités réellement utiles que nous devons conserver ou améliorer.
+
+7. Votre retour attendu
+
+Les trois schémas joints représentent notre vision fonctionnelle cible. Ils ne constituent pas encore une architecture technique définitivement validée.
+
+Je souhaiterais donc que vous les examiniez attentivement et que vous me fassiez part de votre appréciation technique, notamment sur :
+
+    La faisabilité de cette architecture et les éventuelles difficultés que vous identifiez ;
+    L'organisation interne du HUB et de ses différents modules ;
+    La conception des bibliothèques intelligentes et leur mécanisme d'enrichissement ;
+    Les échanges avec FERnest et la gestion des référentiels ;
+    Les garanties techniques permettant l'absence de stockage documentaire ;
+    Les fonctionnalités pouvant être reprises de CaptureMind et celles devant être redéveloppées ;
+    La distinction entre l'étude comparative initiale et les développements complémentaires nécessaires, avec une première estimation des charges et du calendrier.
+
+Je souhaite surtout que vous conserviez votre liberté d'analyse et que vous nous proposiez, si nécessaire, des améliorations ou une architecture différente lorsque vous estimez qu'elle serait plus pertinente.
+
+Notre ambition est de toujours construire un HUB documentaire et comptable autonome, évolutif et commercialisable, dont la valeur reposera autant sur la qualité de son moteur IA que sur la puissance de ses bibliothèques de connaissances et de ses capacités de préparation comptable.
+
+Le tout doit fonctionner sans accumulation de factures ni duplication inutile des données documentaires.
+
+Je vous remercie de bien vouloir étudier ces trois schémas et de me faire un retour argumenté avant que nous arrêtions définitivement le périmètre technique des développements.
+
+Bien cordialement,
+
+
+-------- Message transféré --------
+Sujet : 	Re: Fwd: Fwd: CaptureMind – Proposition d’un nouveau service de traitement documentaire par IA
+Date : 	Mon, 26 Oct 2026 14:37:27 +0100
+De : 	Jean Elson <jean.elson.razafimahafaly@digilium.pro>
+Pour : 	Romain FRIDERICH <rfriderich@digipepss.pro>
+Copie à : 	sarobidy.ratefiarison@digilium.pro, dev@digipepss.pro, giliev@digipepss.pro
+
+
+Bonjour M. FRIDERICH ,
+
+À la suite de nos échanges, j’ai repris les travaux de Hasina et les résultats disponibles afin de préciser les choix techniques à examiner avant de retenir l’architecture du nouveau moteur documentaire IA. Vous trouverez ci-dessous mon analyse, les modèles envisagés, le protocole de comparaison, les contraintes matérielles et le délai estimé.
+
+Ma recommandation
+
+Je confirme l’option 2 évoquée le 20 octobre : créer un moteur documentaire IA indépendant de CaptureMind, accessible par API et sans stockage documentaire permanent. FERnest restera le référentiel documentaire unique.
+
+Pour le traitement des factures, je privilégie à ce stade une approche hybride comme hypothèse de travail, sans considérer qu’elle est déjà la meilleure. L’objectif est de vérifier si elle offre un meilleur compromis que la lecture multimodale directe ou la chaîne OCR + LLM.
+
+1. Analyse des travaux de Hasina
+
+J’ai repris les documents et échanges de passation suivants :
+
+    Remplacement du moteur de compréhension documentaire de Capture Mind — 17 juillet 2026 ;
+
+    le fil de la mission jusqu’au 30 juillet 2026, notamment la réponse de Hasina à 12 h 21 ;
+
+    Analyse de l’utilisation GPU et test de performance LexIA — 29 et 30 juillet 2026, notamment la réponse du 30 juillet à 12 h 10 ;
+
+    Passation_CaptureMind_Hasina_CHRONOLOGIE_COMPLETE.pdf — 3 septembre 2026, objet « CaptureMind – Reprise du projet et synthèse des travaux réalisés ».
+
+Les essais documentés portent notamment sur PaddleOCR-VL, PaddleOCR Classic et Qwen2.5-7B-Instruct-AWQ via vLLM, sur une RTX 4000 SFF Ada d’environ 20 Go, partagée avec LexIA.
+
+Les principaux résultats relevés sont les suivants :
+
+    PaddleOCR-VL : environ 0,8 à 1 seconde par page côté GPU ;
+
+    Qwen2.5-7B : environ 7 secondes pour structurer les champs à partir du texte extrait ;
+
+    une facture de deux pages traitée en 23,10 secondes au total ;
+
+    des contraintes de mémoire GPU, notamment lorsque plusieurs modèles doivent fonctionner avec LexIA.
+
+Les essais de Tesseract ont également montré des résultats variables selon la mise en page. Les difficultés de mémoire rencontrées avec gpt-oss constituent un autre point à prendre en compte.
+
+Ces travaux fournissent une base technique utile, mais ne suffisent pas à désigner une architecture gagnante. Les mesures disponibles ne permettent notamment pas encore de conclure sur la fiabilité comptable globale, faute d’un échantillon suffisamment large de factures avec des données de référence vérifiées.
+
+Il ne s’agit donc pas de recommencer les expérimentations de Hasina, mais de conserver leurs résultats et de compléter uniquement les comparaisons nécessaires, en particulier sur la lecture multimodale directe et l’intérêt d’une architecture hybride.
+
+2. Modèles à évaluer et licences
+
+Les composants déjà testés serviront de référence. Pour les éventuels essais complémentaires, je propose d’examiner notamment :
+
+    Qwen3-VL 4B ou 8B, pour évaluer la lecture directe des factures par un modèle multimodal ;
+
+    PaddleOCR-VL, en réutilisant les résultats existants et en complétant les mesures uniquement si nécessaire ;
+
+    DeepSeek-OCR, comme alternative éventuelle si ses besoins matériels et son intérêt technique justifient un essai.
+
+Le choix tiendra compte de la précision d’extraction, de l’exactitude des données comptables, du temps de traitement, de la consommation GPU, de la stabilité et de la capacité de traitement simultané.
+
+Nous privilégierons des bibliothèques et des modèles open source gratuits, sous des licences permissives telles qu’Apache 2.0, MIT ou BSD, permettant leur utilisation commerciale sans licence payante obligatoire. L’objectif est de pouvoir les utiliser, les modifier et les intégrer à nos applications sans abonnement ni dépendance à un fournisseur propriétaire.
+
+La vérification portera sur les bibliothèques, les poids des modèles et leurs dépendances, afin de confirmer les conditions d’utilisation commerciale, de modification et de redistribution. PyMuPDF sera écarté au profit d’alternatives à examiner, telles que pypdf, pdfminer.six ou pypdfium2. Les licences exactes des versions retenues seront vérifiées avant le choix définitif.
+
+Les factures resteront traitées dans notre environnement interne, sans transmission à une API d’IA externe. Les éventuels coûts d’infrastructure, notamment pour le serveur et le GPU, seront distingués des coûts de licence logicielle.
+
+3. Comparaison des trois architectures
+
+Trois approches seront considérées :
+
+    Multimodale directe : le modèle analyse la facture et restitue directement les données comptables structurées. Cette approche reste à évaluer comme chaîne complète.
+
+    OCR + LLM : un moteur extrait le texte, puis un modèle de langage identifie et structure les données comptables. Les mesures existantes serviront de référence, sans refaire inutilement les essais déjà réalisés.
+
+    Hybride : le système privilégie l’extraction directe du texte PDF ou des données XML Factur-X lorsqu’elles sont disponibles, puis utilise l’OCR ou le multimodal selon la nature du document et les résultats des contrôles.
+
+L’objectif est de déterminer quelle approche offre le meilleur compromis pour nos besoins réels, plutôt que de privilégier une technologie par habitude.
+
+4. Protocole de test
+
+Je propose de commencer avec environ 50 factures réelles, selon les documents disponibles, puis d’élargir l’échantillon si nécessaire pour prendre une décision fiable. Les factures utilisées lors des essais précédents seront réutilisées si elles sont toujours disponibles et exploitables.
+
+Les données de référence devront être vérifiées avant les tests. Les approches seront évaluées sur le même échantillon et avec le même schéma de sortie, notamment pour les champs suivants : fournisseur, SIREN/SIRET, numéro et dates de facture, montants HT, ventilation de TVA, total TTC et lignes de facturation.
+
+Les critères de comparaison seront :
+
+    l’exactitude de chaque champ ;
+
+    le taux de factures entièrement correctes sans correction humaine ;
+
+    la cohérence des données et des montants comptables ;
+
+    le temps de traitement et le débit ;
+
+    la consommation de mémoire GPU ;
+
+    la stabilité et le comportement en traitement simultané.
+
+Les contrôles comptables resteront indépendants des modèles, notamment pour les remises, les frais, la TVA et les arrondis. Les valeurs incertaines devront être signalées pour vérification, plutôt que considérées automatiquement comme validées.
+
+5. Ressources GPU
+
+Les essais de Hasina, fin juillet 2026 (échanges des 29 et 30 juillet, notamment sa réponse du 30 juillet à 12 h 10), ont été réalisés sur une RTX 4000 SFF Ada d’environ 20 Go, partagée avec LexIA. La mémoire disponible constitue donc une contrainte à intégrer dans le choix des modèles et les conditions de test.
+
+Avant de planifier les essais complémentaires, il faudra vérifier avec Alphonse les créneaux disponibles et la mémoire GPU réellement libre. Les besoins des modèles multimodaux seront évalués en tenant compte de cette contrainte, sans perturber les traitements de LexIA.
+
+6. Architecture cible et intégration
+
+Quel que soit le modèle retenu, le moteur devra rester indépendant des technologies utilisées, accessible par API et intégrable à FERnest.
+
+L’architecture devra permettre de remplacer facilement un moteur OCR ou un modèle IA sans reconstruire l’ensemble de l’application. Elle ne devra pas dépendre durablement d’un fournisseur ou d’un modèle particulier.
+
+FERnest restera le référentiel documentaire unique. Le moteur assurera le traitement et la restitution des données extraites, avec une traçabilité des résultats, des contrôles comptables indépendants et une gestion explicite des incertitudes. Une valeur simplement plausible ne sera pas considérée comme une donnée comptable validée.
+
+7. Délai estimé et suite
+
+J’estime à 10 à 15 jours ouvrés l’étude comparative, comprenant les comparaisons complémentaires nécessaires, la préparation du corpus de référence, le banc d’essai, les mesures de performance et la synthèse accompagnée d’une recommandation technique argumentée. Cette estimation dépend de la disponibilité des factures de référence et des ressources GPU.
+
+Si ce cadrage vous convient, je vérifierai ensuite avec Alphonse le créneau GPU et la mémoire encore libre, ainsi que les factures de référence réellement disponibles. Après votre accord, nous réaliserons uniquement les comparaisons nécessaires — lecture multimodale directe et architecture hybride —, puis je vous présenterai les résultats mesurés et ma recommandation argumentée.
+
+Le développement du moteur, la création de son API, l’intégration à FERnest et la recette seront estimés séparément.
+
+
+Bien cordialement,
+Jean Elson
+
+
+Le 20/10/2026 à 18:45, Romain FRIDERICH a écrit :
+>
+> Jean Elson,
+>
+> Je fais suite à nos échanges concernant la refonte de CaptureMind et la création d'un nouveau moteur documentaire IA indépendant, destiné notamment à FERnest et, à terme, à VISIOfact.
+>
+> Je vous confirme mon accord sur le principe d'une architecture entièrement nouvelle, indépendante de CaptureMind, tout en conservant la possibilité de récupérer certaines fonctionnalités métier existantes lorsqu'elles présentent un réel intérêt.
+>
+> Toutefois, avant d'engager les développements, je souhaite approfondir un point technique qui me paraît essentiel.
+>
+> 1. Pourquoi conserver une architecture OCR + LLM alors que les modèles multimodaux peuvent directement comprendre les documents ?
+>
+> Lorsque je transmets une facture à ChatGPT, celui-ci est généralement capable d'en identifier le fournisseur, les dates, les montants HT, les différents taux de TVA, le total TTC et les lignes de facturation, sans nécessiter de paramétrage spécifique pour chaque fournisseur.
+>
+> Cela m'amène à m'interroger sur l'architecture que nous devons privilégier.
+>
+> Dans votre première proposition, vous évoquiez notamment PyMuPDF, PP-OCRv5, Qwen3 et Qwen-VL, avec une succession de traitements permettant de lire, interpréter puis structurer les informations.
+>
+> Or, les modèles multimodaux récents peuvent désormais analyser directement une image ou une page de facture, comprendre sa structure et produire les informations attendues dans un format structuré.
+>
+> Ne serait-il donc pas pertinent d'étudier une approche dans laquelle un modèle multimodal assure directement la lecture et la compréhension du document, sans imposer systématiquement une première étape OCR suivie d'un second modèle de langage ?
+>
+> Je ne prétends pas que cette approche sera nécessairement meilleure dans tous les cas. Je souhaite précisément que nous puissions le vérifier techniquement, plutôt que de retenir une architecture par habitude.
+>
+> 2. Étudier les nouvelles générations de modèles open source
+>
+> Je souhaiterais notamment que vous examiniez les possibilités offertes par les modèles récents, parmi lesquels :
+>
+> ·        PaddleOCR-VL, pour la compréhension visuelle et structurelle des documents ;
+>
+> ·        les modèles multimodaux de la famille Qwen, capables d'analyser directement des images ;
+>
+> ·        les nouvelles générations de PaddleOCR ;
+>
+> ·        éventuellement DeepSeek-OCR ou d'autres alternatives pertinentes.
+>
+> Cette liste n'est pas limitative et je vous laisse naturellement la possibilité de proposer des technologies plus adaptées.
+>
+> En revanche, je souhaite que les choix soient fondés sur des comparaisons objectives : qualité de reconnaissance, exactitude des données comptables, temps de traitement, consommation GPU, stabilité et capacité de traitement simultané.
+>
+> 3. Une exigence impérative : des solutions open source à licence permissive
+>
+> Je souhaite être particulièrement clair sur ce point.
+>
+> Le futur moteur documentaire doit pouvoir être intégré à nos applications, modifié, exploité commercialement, distribué et éventuellement vendu à des tiers, sans dépendance à un fournisseur propriétaire et sans obligation de rendre public notre propre code source.
+>
+> Nous devons donc privilégier des composants et modèles sous licences permissives, notamment Apache 2.0, MIT ou BSD.
+>
+> Cette vérification doit concerner non seulement le code des bibliothèques, mais également les poids des modèles, leurs dépendances et les éventuelles restrictions de redistribution ou d'exploitation commerciale.
+>
+> Je ne souhaite pas découvrir, après plusieurs mois de développement, qu'une technologie retenue impose une licence commerciale supplémentaire ou limite notre liberté d'exploitation.
+>
+> À ce titre, les conditions de licence de PyMuPDF, que vous avez proposé, méritent également une attention particulière.
+>
+> 4. Capitaliser impérativement sur les travaux de Hasina
+>
+> Hasina a déjà consacré un temps important à l'expérimentation de PaddleOCR-VL, PaddleOCR Classic, Qwen2.5 et différentes configurations GPU.
+>
+> Je souhaite donc que ces travaux constituent notre point de départ technique.
+>
+> Il ne s'agit pas de recommencer les mêmes essais, mais de comprendre précisément ce qui a été réalisé, ce qui fonctionnait, les difficultés rencontrées et les enseignements à conserver.
+>
+> Je vous remercie de me préciser ce que vous avez déjà pu analyser dans sa passation et quelles conclusions vous en tirez.
+>
+> 5. Comparer les architectures avant de décider
+>
+> Je souhaiterais que vous étudiiez au minimum trois approches :
+>
+> ·        Une approche multimodale directe : le modèle analyse la facture et restitue directement les données comptables structurées.
+>
+> ·        Une approche OCR + LLM : un premier moteur extrait le contenu, puis un modèle de langage identifie les informations comptables.
+>
+> ·        Une approche hybride : le système sélectionne automatiquement le traitement le plus pertinent selon la nature du document, en privilégiant notamment l'extraction directe des données PDF ou Factur-X lorsqu'elles sont disponibles.
+>
+> Ces approches devraient être comparées sur un même échantillon de factures réelles, avec des résultats attendus préalablement vérifiés.
+>
+> Je souhaite notamment connaître les écarts de précision sur les champs sensibles : fournisseur, SIREN/SIRET, numéro de facture, dates, montants HT, ventilation de TVA, total TTC et lignes de facturation.
+>
+> Il faudra également mesurer le taux de factures correctement traitées sans correction humaine, et non simplement le taux de reconnaissance des caractères.
+>
+> 6. Concevoir un moteur indépendant des modèles retenus
+>
+> Quel que soit le résultat de cette étude, je souhaite que l'architecture finale permette de remplacer facilement un moteur OCR ou un modèle IA sans devoir reconstruire l'ensemble de l'application.
+>
+> Les évolutions technologiques sont rapides. Nous ne devons pas nous retrouver demain enfermés dans PaddleOCR, Qwen ou tout autre modèle particulier.
+>
+> Le moteur doit rester indépendant, réutilisable, accessible par API et directement intégré à la GED de FERnest, qui demeure notre référentiel documentaire unique.
+>
+> Les données extraites devront faire l'objet de contrôles comptables indépendants, avec une traçabilité des résultats et une gestion explicite des incertitudes. Une valeur simplement plausible ne doit jamais être considérée comme une donnée comptable validée.
+>
+> 7. Ce que j'attends avant de lancer les développements
+>
+> Avant de figer une solution technique, pourriez-vous me transmettre une synthèse présentant :
+>
+> ·        Votre analyse des travaux et résultats de Hasina ;
+>
+> ·        Les modèles open source permissifs que vous recommandez d'évaluer ;
+>
+> ·        Votre appréciation des trois architectures envisagées ;
+>
+> ·        Le protocole de tests comparatifs que vous proposez ;
+>
+> ·        Les ressources GPU nécessaires pour ces essais ;
+>
+> ·        Le délai estimé pour réaliser cette étude et nous permettre de prendre une décision.
+>
+> Je ne souhaite pas engager plusieurs semaines de développement sur une combinaison de technologies sans avoir préalablement vérifié qu'elle constitue réellement le meilleur compromis pour nos besoins.
+>
+> Mon objectif n'est pas simplement de disposer d'un OCR plus performant que celui de CaptureMind. Je souhaite que nous construisions un véritable moteur de compréhension documentaire, capable d'analyser les factures avec une qualité proche de celle que l'on constate aujourd'hui avec les meilleurs assistants multimodaux, tout en garantissant la fiabilité comptable, la maîtrise des coûts et notre indépendance technologique.
+>
+> Je vous remercie de votre retour sur ces différents points et, surtout, de votre recommandation technique personnelle et argumentée.
+>
+> Bien cordialement,
+>
+>
+> -------- Message transféré --------
+> Sujet : 	Re: Fwd: CaptureMind – Proposition d’un nouveau service de traitement documentaire par IA
+> Date : 	Tue, 20 Oct 2026 16:06:27 +0200
+> De : 	Jean Elson <jean.elson.razafimahafaly@digilium.pro>
+> Pour : 	Romain FRIDERICH <rfriderich@digipepss.pro>
+> Copie à : 	sarobidy.ratefiarison@digilium.pro, dev@digipepss.pro, giliev@digipepss.pro
+>
+>
+> M. FRIDERIC, 
+>
+> Après analyse des deux approches, je recommande de privilégier l’option 2 : concevoir un moteur documentaire IA indépendant, puis reprendre les fonctionnalités métier de CaptureMind qui restent pertinentes.
+>
+> Je partage l’approche que vous proposez : valider d’abord les fonctionnalités essentielles du moteur indépendant, puis reprendre les éléments métier utiles de CaptureMind et préparer son intégration avec FERnest, dont la GED restera le référentiel documentaire unique.
+>
+> L’option 1 pourrait permettre d’avancer plus rapidement au démarrage si les composants existants sont réutilisables. Toutefois, si les difficultés concernent aussi l’architecture et les enchaînements de traitement, le remplacement du seul moteur OCR risque de conserver une partie de la complexité actuelle.
+>
+> L’option 2 me paraît plus adaptée pour séparer le traitement IA de la logique métier, faciliter la maintenance et permettre une réutilisation du moteur pour FERnest et VISIOfact.
+>
+> Je propose de procéder de la manière suivante :
+>
+>     Examiner l’existant et les travaux de Hasina afin de capitaliser sur les expérimentations déjà réalisées avec PaddleOCR, Qwen et vLLM.
+>
+>     Concevoir un moteur indépendant pour la reconnaissance documentaire, l’extraction des données de factures et les contrôles de cohérence, avec une API définie dès le départ pour les échanges avec FERnest.
+>
+>     Évaluer les performances sur un premier échantillon d’environ 100 documents réels, en mesurant la qualité d’extraction, les temps de traitement, le débit parallèle et la consommation GPU.
+>
+>     Évaluer la charge sur LexIA, en coordination avec Alphonse, afin de déterminer si l’infrastructure actuelle peut absorber ces traitements avant d’envisager un investissement matériel.
+>
+> FERnest resterait le référentiel documentaire unique , sans stockage documentaire permanent supplémentaire dans le moteur IA.
+>
+> En conclusion, je privilégie l’option 2 pour la séparation des responsabilités et la pérennité de la solution. L’examen de l’existant et l’évaluation des travaux déjà réalisés permettront de confirmer les choix techniques et de déterminer les éléments à conserver ou à redévelopper.
+>
+>
+> Bien cordialement,
+> Jean Elson
+>
+>
+> Le 19/10/2026 à 15:51, Romain FRIDERICH a écrit :
+>>
+>> Bonjour Jean Elson,
+>>
+>> Je vous remercie pour votre retour et pour l'analyse que vous avez réalisée concernant l'évolution de CaptureMind.
+>>
+>> Votre proposition de développer un nouveau service de traitement documentaire reposant sur PaddleOCR et les modèles Qwen me paraît intéressante, notamment dans la perspective d'améliorer les performances, la fiabilité et la capacité de traitement simultané des documents.
+>>
+>> Toutefois, après réflexion et au regard de l'historique du projet, des nombreuses difficultés rencontrées ainsi que des travaux précédemment réalisés par Hasina, je souhaiterais que nous prenions un peu de recul sur l'architecture envisagée.
+>>
+>> Je m'interroge notamment sur l'intérêt de conserver CaptureMind en retirant simplement son moteur OCR pour le remplacer par une nouvelle technologie.
+>>
+>> En effet, les difficultés que nous avons rencontrées ne semblent pas uniquement liées au moteur de reconnaissance documentaire. Elles concernent également l'architecture générale, les traitements successifs, les interactions entre les différents composants et la gestion du cycle de vie des documents.
+>>
+>> Dès lors, ne risquons-nous pas, en conservant une partie importante de CaptureMind, de maintenir des dépendances techniques qui pourraient compliquer le développement, l'intégration et la maintenance du nouveau moteur ?
+>>
+>> Ne serait-il pas finalement plus simple, plus rapide et surtout plus pérenne de repartir sur une architecture entièrement nouvelle ?
+>>
+>> L'idée serait de procéder différemment :
+>>
+>> 1.       Développer dans un premier temps un moteur documentaire IA totalement indépendant, sans chercher à l'intégrer immédiatement dans l'architecture actuelle de CaptureMind.
+>>
+>> 2.       Concevoir et tester ce moteur autour des fonctionnalités essentielles : reconnaissance documentaire, compréhension des factures, extraction des données comptables, contrôles de cohérence, traitement parallèle et gestion des erreurs.
+>>
+>> 3.       Une fois ce moteur opérationnel et ses performances validées, reprendre méthodiquement les fonctionnalités métier existantes dans CaptureMind afin d'identifier celles qui présentent un réel intérêt et qui pourraient être récupérées, adaptées ou redéveloppées.
+>>
+>> 4.       Intégrer ensuite directement ce nouveau moteur à FERnest, dont la GED doit rester notre unique référentiel documentaire, conformément à notre décision du 9 octobre dernier.
+>>
+>> Cette approche permettrait également de concevoir dès le départ un moteur indépendant et réutilisable, qui pourrait à terme servir d'autres applications du groupe, notamment VISIOfact.
+>>
+>> Je ne souhaite naturellement pas écarter votre proposition initiale sans analyse. En revanche, je voudrais éviter que nous consacrions à nouveau plusieurs mois à adapter une architecture existante alors qu'une reconstruction ciblée pourrait éventuellement être moins complexe.
+>>
+>> Par ailleurs, la passation de Hasina fait déjà état de travaux et d'expérimentations autour de PaddleOCR, Qwen, vLLM et des infrastructures GPU. Il me paraît donc important de capitaliser sur ces résultats, sans reproduire inutilement les mêmes essais.
+>>
+>> Je souhaiterais donc connaître votre appréciation technique sur ces deux approches :
+>>
+>> ·        Conserver CaptureMind en remplaçant son moteur OCR, comme vous le proposez actuellement.
+>>
+>> ·        Développer un nouveau moteur IA indépendant, puis récupérer uniquement les fonctionnalités métier pertinentes de CaptureMind.
+>>
+>> Selon vous, laquelle de ces deux solutions serait réellement la plus simple à développer, la plus rapide à mettre en œuvre et la plus facile à maintenir sur le long terme ?
+>>
+>> Je souhaiterais également que vous puissiez identifier les éventuelles dépendances techniques de CaptureMind qui pourraient compliquer son évolution, ainsi que les éléments qu'il serait indispensable de conserver.
+>>
+>> Enfin, concernant le serveur GPU, je partage votre approche consistant à mesurer préalablement les besoins réels avant d'envisager tout investissement supplémentaire.
+>>
+>> Mon objectif est simple : nous devons désormais construire une solution durable, fiable et performante, et non chercher à préserver CaptureMind à tout prix.
+>>
+>> Je préfère que nous prenions dès maintenant la bonne orientation technique plutôt que de découvrir, après plusieurs semaines de développement, que l'architecture retenue nous impose de nouvelles contraintes.
+>>
+>> Je vous remercie donc de me faire part de votre analyse et de votre recommandation, en toute indépendance, sur la solution qui vous paraît la plus pertinente.
+>>
+>> Bien cordialement,
+>>
+>>  
+>>
+>>  
+>>
+>> -------- Message transféré --------
+>> Sujet : 	CaptureMind – Proposition d’un nouveau service de traitement documentaire par IA
+>> Date : 	Mon, 19 Oct 2026 14:48:41 +0200
+>> De : 	Jean Elson <jean.elson.razafimahafaly@digilium.pro>
+>> Pour : 	Romain FRIDERICH <rfriderich@digipepss.pro>
+>> Copie à : 	Sarobidy.ratefiarison@digilium.pro, Georgi Iliev <giliev@digipepss.pro>
+>>
+>>
+>> Bonjour M. Friderich,
+>>
+>> À la suite de nos échanges et de ma discussion avec M. Iliev, j’ai analysé le fonctionnement et le code actuels de CaptureMind. Je propose de développer un service de traitement distinct, appelé via une API, reposant sur PP-OCRv5 (PaddleOCR) et les modèles Qwen. CaptureMind conserverait son interface et les fonctionnalités métier qui restent adaptées à la nouvelle architecture. L’objectif est d’améliorer la rapidité, la fiabilité et la capacité à traiter plusieurs documents simultanément.
+>>
+>> Concernant l’infrastructure, le serveur actuel de CaptureMind ne disposant pas de GPU, nous pourrions envisager d’utiliser le serveur de LexIA pour les tests. Toutefois, une utilisation simultanée pourrait saturer les ressources disponibles. Il me semble donc pertinent d’évaluer la possibilité d’un serveur GPU dédié, en fonction des performances mesurées et des ressources nécessaires.
+>>
+>>
+>> 1. Les difficultés actuelles
+>>
+>> OpenCapture présente plusieurs limites :
+>>
+>>     Lorsqu’une information manque, le traitement peut relancer plusieurs fois l’OCR sur les mêmes pages.
+>>
+>>     Les workers traitent les fichiers un par un, ce qui allonge la file d’attente.
+>>
+>>     Certaines étapes de traitement sont répétées entre la découpe du document et sa vérification.
+>>
+>>     Les échanges doivent mieux confirmer la réception des résultats et éviter les doublons lors des nouvelles tentatives.
+>>
+>> Ces limites viennent de la conception. Les optimisations déjà menées ont apporté des gains lors des essais, mais n’ont pas permis d’obtenir un fonctionnement suffisamment stable en production. Continuer à corriger le même moteur reviendrait à conserver les mécanismes à l’origine des lenteurs.
+>>
+>> 2. La nouvelle approche : un service IA sans reconstruire toute l’application
+>>
+>> L’objectif n’est pas de reconstruire entièrement CaptureMind, mais de conserver les éléments et les fonctionnalités métier qui restent utiles, tout en remplaçant le service de traitement OCR actuel par une nouvelle brique IA accessible via une API.
+>>
+>> Le traitement sera adapté au type de document :
+>>
+>>     PDF contenant du texte : extraction directe avec PyMuPDF, sans OCR inutile.
+>>
+>>     Images et PDF scannés : reconnaissance du texte avec PP-OCRv5 (PaddleOCR).
+>>
+>>     Compréhension documentaire : Qwen3 analyse le texte extrait pour identifier et structurer les informations recherchées. Qwen-VL intervient lorsque l’analyse de l’image est nécessaire pour compléter l’extraction.
+>>
+>>     Données XML structurées, notamment Factur-X  : lecture directe des données, sans passer inutilement par l’OCR ou le modèle IA.
+>>
+>> Le nouveau service prendra ainsi en charge le traitement documentaire à la place du moteur actuel. Une fois son fonctionnement et ses performances validés, l’ancien service OCR sera retiré du circuit de traitement.
+>>
+>> 3. Les avantages attendus
+>>
+>> Cette architecture vise à limiter les reconnaissances répétées, à réduire les temps de traitement et à permettre le traitement de plusieurs fichiers en parallèle grâce à une file de traitement et plusieurs workers.
+>>
+>> La fiabilité sera renforcée par des contrôles sur les montants HT, TVA et TTC, les SIREN/SIRET et les dates. Le modèle pourra identifier les mots correspondant aux champs recherchés, afin que le service récupère les valeurs directement dans le document et facilite leur vérification.
+>>
+>> Les échanges intégreront un identifiant de traitement, un accusé de réception et des contrôles anti-doublons. Les fichiers temporaires seront supprimés après traitement. L’objectif est d’héberger les composants IA en interne, sans transmettre les documents à un service d’IA externe.
+>>
+>> 4. Validation technique avant le choix du serveur
+>>
+>> Comme discuté avec M. Iliev, l’approche envisagée consiste à vérifier d’abord le fonctionnement du service en local, puis à tester environ 100 documents réels sur le serveur GPU de LexIA, en coordination avec Alphonse et sous réserve de la disponibilité des ressources.
+>>
+>> Les tests permettront de mesurer la qualité d’extraction, les temps de traitement, le débit en parallèle et la consommation GPU. Nous pourrons ainsi déterminer si le serveur LexIA peut accueillir ces traitements sans dégrader ses performances, ou s’il serait nécessaire d’envisager un serveur GPU dédié.
+>>
+>> Que pensez-vous de cette approche ? Si le principe vous paraît pertinent, nous pourrons ensuite définir les prochaines étapes en fonction des priorités en cours, puis évaluer les performances avant toute décision concernant le serveur.
+>>
+>> Bien cordialement,
+>> Jean Elson

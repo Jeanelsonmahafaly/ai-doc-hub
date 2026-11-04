@@ -1,0 +1,430 @@
+Bonjour Messieurs,
+
+Je vous remercie sincèrement pour votre retour ainsi que pour la qualité et la précision du rapport transmis. Ces éléments nous permettent de mieux appréhender les travaux déjà réalisés, les différentes étapes restant à franchir et les moyens nécessaires pour mener nos projets à leur terme.
+
+Notre volonté commune demeure naturellement d'aboutir à des solutions pleinement opérationnelles, fiables et pérennes, tout en conservant une vision claire des priorités et du calendrier.
+
+Afin de pouvoir vous apporter une réponse précise et prendre les décisions nécessaires en toute connaissance de cause, je souhaiterais obtenir quelques clarifications complémentaires sur les points suivants :
+
+1. CaptureMind - Périmètre des 25 à 30 journées estimées
+
+Pouvez-vous me confirmer que cette estimation intègre bien l'ensemble des fonctionnalités envisagées, notamment la construction des écritures comptables, les bibliothèques intelligentes des tiers et des modèles comptables, leur enrichissement progressif ainsi que les tests garantissant l'absence de stockage documentaire sur le serveur CaptureMind ?
+
+2. Planning - Identification des principaux jalons
+
+Pourriez-vous distinguer les différentes échéances relatives à CaptureMind, au dépôt du dossier DGFiP, au développement du point d'accès Peppol natif et au raccordement effectif au PPF ?
+
+Cela nous permettrait de mieux identifier les éventuelles dépendances entre ces chantiers et les travaux susceptibles d'avancer parallèlement.
+
+3. Peppol – Architecture technique et estimation
+
+Les 30 journées annoncées reposent-elles sur l'intégration d'un composant open source existant et éprouvé ? Dans l'affirmative, pourriez-vous préciser la solution envisagée ainsi que les conditions de sa licence d'utilisation et d'exploitation commerciale ?
+
+4. Dossier DGFiP - Maintien éventuel de l'échéance de janvier 2027
+
+Monsieur Iliev, pourriez-vous me préciser les éléments techniques ou réglementaires qui feraient obstacle à un dépôt de notre dossier début janvier 2027, dans l'hypothèse où B2Brouter serait maintenu temporairement, le temps de finaliser notre propre point d'accès Peppol ?
+
+Il me paraît important de distinguer les conditions nécessaires au dépôt de notre dossier de celles relatives à notre objectif d'autonomie technique complète.
+
+Ces précisions nous permettront d'arrêter ensemble une organisation réaliste, sans remettre en cause la priorité accordée à CaptureMind ni notre volonté de finaliser VISIOfact dans les meilleures conditions.
+
+Je vous remercie par avance pour votre retour et pour votre implication dans l'aboutissement de ces deux projets.
+
+Cordiales Salutations. 
+
+-- 
+
+-------- Message transféré --------
+Sujet : 	Re: Fwd: FW: Pièce 12 – Interopérabilité native AS4/Peppol : périmètre, faisabilité et estimation
+Date : 	Fri, 30 Oct 2026 09:34:47 +0100
+De : 	Jean Elson <jean.elson.razafimahafaly@digilium.pro>
+Pour : 	Romain FRIDERICH <rfriderich@digipepss.pro>
+Copie à : 	sarobidy.ratefiarison@digilium.pro, giliev@digipepss.pro
+
+
+Bonjour M. FRIDERICH,
+
+Veuillez trouver ci-joint notre réponse à votre courrier du 27 octobre 2026, intégrant les éléments convenus concernant le point d’accès Peppol natif et le projet CaptureMind.
+
+Nous restons à votre disposition pour toute information complémentaire.
+
+Bien cordialement,
+Jean Elson
+
+
+Le 27/10/2026 à 19:22, Romain FRIDERICH a écrit :
+>
+> Mr Iliev,
+> Jean Elson,
+>
+> Je fais suite à votre proposition du 27 octobre 2026, examinée avec Monsieur Iliev, concernant la finalisation de l’interopérabilité native AS4/Peppol de VISIOfact.
+>
+> Je vous remercie pour les précisions apportées et pour le travail réalisé jusqu'à présent.
+>
+> Je souhaite néanmoins revenir sur plusieurs points afin de disposer d'une vision claire des développements restant à effectuer et de nous assurer que nous poursuivons tous le même objectif.
+>
+> 1. Temps déjà consacrés à l'interopérabilité et travaux restant à réaliser
+>
+> À la lecture de vos rapports de temps passés depuis avril 2026, j'identifie approximativement 15 à 20 journées de travail consacrées, totalement ou partiellement, au routage inter-plateformes, aux providers et à l'intégration B2Brouter/Peppol.
+>
+> Cette estimation reste naturellement à confirmer, certaines journées ayant pu être consacrées à plusieurs sujets.
+>
+> Vous indiquez aujourd'hui qu'il serait nécessaire de prévoir 25 à 30 journées ouvrées supplémentaires pour finaliser notre propre point d'accès Peppol, hors démarches et délais externes.
+>
+> Pourriez-vous me confirmer ces deux ordres de grandeur et préciser ce qui distingue les développements déjà réalisés de ceux restant à effectuer ?
+>
+> Mon objectif est simplement de comprendre l'articulation entre les travaux engagés depuis plusieurs mois et ceux que vous proposez aujourd'hui, en évitant notamment de reprendre des fonctionnalités déjà développées.
+>
+> 2. Confirmation de l'autonomie complète de VISIOfact
+>
+> Je souhaite rappeler un point fondamental : depuis l'origine, notre objectif est de développer une plateforme VISIOfact disposant de ses propres fonctionnalités et capable, à terme, de fonctionner sans dépendre de B2Brouter ou d'un autre prestataire pour assurer ses fonctions essentielles.
+>
+> Le recours à des composants open source éprouvés ne pose naturellement aucune difficulté dès lors que nous en maîtrisons l'intégration et l'exploitation.
+>
+> En revanche, notre objectif n'a jamais été de conserver durablement une dépendance à une plateforme tierce.
+>
+> Dans ces conditions, pourriez-vous me confirmer que les 25 à 30 journées annoncées correspondent bien aux derniers développements nécessaires pour atteindre cette autonomie technique, notamment pour l'émission, la réception, l'adressage, les échanges inter-plateformes, les statuts du cycle de vie et leur traçabilité ?
+>
+> Je souhaiterais également savoir si d'autres fonctionnalités, développements ou démarches indispensables restent à prévoir, au-delà de ceux déjà identifiés.
+>
+> Il est important pour moi de disposer dès maintenant d'une vision complète, plutôt que de découvrir progressivement de nouveaux travaux nécessaires à l'atteinte de notre objectif.
+>
+> 3. Report du dépôt de notre dossier d'immatriculation
+>
+> Compte tenu de ces éléments, je considère préférable de reporter le dépôt de notre dossier de candidature en tant que plateforme agréée, initialement envisagé plus rapidement.
+>
+> Ce choix ne remet nullement en cause les travaux réalisés. Il répond à une volonté de cohérence entre notre dossier réglementaire, notre architecture technique et les fonctionnalités effectivement opérationnelles.
+>
+> Nous avons engagé une démarche de certification ISO 27001 précisément pour structurer et sécuriser notre environnement dans la perspective de l'immatriculation de VISIOfact.
+>
+> Cette certification représente un investissement important, qui prend tout son sens dans notre stratégie de développement d'une plateforme autonome. Elle ne constitue pas une fin en soi : elle s'inscrit dans un projet plus large, dont l'objectif est d'obtenir l'immatriculation de VISIOfact et de disposer d'une solution complète, maîtrisée et pérenne.
+>
+> Je souhaite donc que notre dossier d'immatriculation reflète fidèlement la réalité de notre système d'information et de ses capacités techniques, sans décalage entre les engagements présentés à l'administration et les fonctionnalités réellement disponibles.
+>
+> Il ne s'agit pas simplement de déposer un dossier le plus rapidement possible, mais de présenter une candidature solide, cohérente et suffisamment aboutie pour éviter d'avoir à justifier ultérieurement des écarts qui auraient pu être anticipés.
+>
+> 4. Calendrier de finalisation
+>
+> Dans cette perspective, je souhaiterais que nous puissions envisager un dépôt début janvier 2027, sous réserve naturellement que les développements, les démarches externes et les vérifications nécessaires soient achevés.
+>
+> Pourriez-vous, avec Monsieur Iliev, me confirmer :
+>
+>     Le périmètre exact des derniers travaux à réaliser pour atteindre l'autonomie recherchée ;
+>     La charge prévisionnelle correspondante, en distinguant les développements internes des démarches externes ;
+>     Les éventuelles dépendances ou difficultés susceptibles de retarder la mise en service ;
+>     Le calendrier réaliste permettant de disposer d'une solution opérationnelle, testée et conforme à l'architecture que nous présenterons à la DGFiP.
+>
+> 5. Priorité à accorder au projet CaptureMind
+>
+> Je souhaite également attirer votre attention sur un autre projet particulièrement important pour notre organisation : CaptureMind.
+>
+> Comme nous l'avons déjà évoqué, CaptureMind constitue un chantier stratégique à part entière, dont les développements doivent désormais avancer de manière concrète.
+>
+> Compte tenu du report envisagé pour le dépôt du dossier d'immatriculation de VISIOfact, je souhaite que la mission CaptureMind soit traitée en priorité dans l'organisation de vos prochains travaux.
+>
+> Il ne s'agit évidemment pas d'abandonner ou de ralentir indéfiniment la finalisation de VISIOfact, mais de réorganiser intelligemment les priorités afin de ne pas immobiliser un projet essentiel au profit d'un calendrier d'immatriculation que nous avons précisément décidé de décaler.
+>
+> Je tiens donc à ce que vous puissiez vous consacrer effectivement à CaptureMind, conformément aux orientations et aux fonctionnalités que nous avons déjà définies, et que ce projet ne soit pas systématiquement repoussé en raison des autres développements en cours.
+>
+> L'objectif est que ces deux projets progressent selon des priorités clairement établies, avec une visibilité sur leurs prochaines étapes et leurs échéances respectives.
+>
+> 6. Objectif général et organisation des prochaines étapes
+>
+> Je tiens à préciser que cette démarche ne vise aucunement à remettre en cause votre implication ni le travail accompli. Elle a pour seul objectif de sécuriser l'aboutissement de nos projets et de nous assurer que les moyens engagés permettent effectivement d'atteindre les résultats recherchés.
+>
+> Mon objectif demeure inchangé : faire de VISIOfact une plateforme agréée pleinement opérationnelle et techniquement autonome, tout en faisant de CaptureMind une priorité immédiate de développement.
+>
+> Je vous remercie par avance pour votre retour sur ces différents points et pour votre proposition d'organisation.
+> Bien cordialement,
+>
+>
+> -------- Message transféré --------
+> Sujet : 	FW: Pièce 12 – Interopérabilité native AS4/Peppol : périmètre, faisabilité et estimation
+> Date : 	Tue, 27 Oct 2026 15:52:13 +0200
+> De : 	giliev@digipepss.pro
+> Pour : 	'Romain FRIDERICH' <rfriderich@digipepss.pro>
+> Copie à : 	'Ratefiarison Soloniaina Sarobidy' <sarobidy.ratefiarison@digilium.pro>, jean.elson.razafimahafaly@digilium.pro
+>
+>
+> Bonjour Mr Friderich,
+>
+>  
+>
+> Comme vous l'avez demandé le 20 octobre, voici la proposition de Jean Elson sur l'interopérabilité Peppol, relue ensemble. Je suis d'accord avec son contenu.
+>
+>  
+>
+> Aujourd'hui, VISIOfact échange déjà ses factures en production par le point d'accès de B2Brouter. Ce sujet ne bloque pas le dépôt du dossier : les comptes rendus de tests d'interopérabilité sont facultatifs dans le formulaire de la DGFiP.
+>
+>  
+>
+> Il y a deux options :
+>
+> - Option A, garder B2Brouter : il est déjà en place. Jean Elson vérifie s'il reste des adaptations à faire, et le coût du contrat est à confirmer.
+>
+> - Option B, notre propre point d'accès sur des composants open source éprouvés : 25 à 30 jours ouvrés de travaux internes, soit cinq à six semaines de Jean Elson à temps plein, en plus de l'adhésion à OpenPeppol, de l'accord avec l'autorité Peppol, des certificats et des tests, dont nous ne maîtrisons pas les délais.
+>
+>  
+>
+> Je recommande l'option A pour l'immatriculation et la mise en service, ce qui va dans le sens de votre consigne de ne pas développer inutilement, puis l'option B une fois les démarches OpenPeppol faites. Si vous retenez l'option B dès maintenant, il faudra arbitrer avec les autres travaux de Jean Elson.
+>
+>  
+>
+> Si l'option A est retenue, B2Brouter doit apparaître dans le dossier parmi les prestataires. Vous détenez les versions à jour des pièces, je vous laisse le vérifier.
+>
+>  
+>
+> J'ai besoin de votre décision sur l'option retenue.
+>
+>  
+>
+> Bien a vous,
+>
+> Georgi
+>
+>  
+>
+> From: Jean Elson <jean.elson.razafimahafaly@digilium.pro>
+> Sent: Tuesday, October 27, 2026 3:04 PM
+> To: Georgi Iliev <giliev@digipepss.pro>
+> Subject: Re: Pièce 12 – Interopérabilité native AS4/Peppol : périmètre, faisabilité et estimation
+>
+>  
+>
+>  
+>
+> Bonjour M. Iliev,
+>
+> Merci pour votre retour détaillé et pour l’analyse de la branche develop.
+>
+> J’ai repris la proposition initiale en intégrant vos remarques concernant le périmètre fonctionnel, l’intégration d’un composant AS4 existant, la publication de nos propres participants, les statuts du cycle de vie et les contraintes d’exploitation.
+> 1. État actuel de VISIOfact
+>
+> L’architecture Delivery sépare déjà la logique métier des mécanismes de transport, avec le port OutboundTransportPort.
+>
+>     Provider utilisé en production : b2brouter_provider, avec DELIVERY_MODE=b2brouter, PEPPOL_ENABLED=false et B2BROUTER_ENABLED=true.
+>     Provider natif : native_pdp_provider, dont la partie Peppol repose encore sur des stubs. Le transport réseau AS4 reste à mettre en œuvre.
+>     Composants existants : les pipelines de factures, le suivi des statuts, la gestion des erreurs, les DLQ et la traçabilité constituent des éléments potentiellement réutilisables. Leur couverture devra être vérifiée pour déterminer les adaptations nécessaires.
+>
+> Cette architecture permet d’envisager l’intégration d’un transport natif sans réécrire l’ensemble des services métier.
+> 2. Périmètre fonctionnel à couvrir
+>
+> Je conserve le découpage F1 à F12 comme référentiel de travail.
+>
+>     F1 – Certificats : gestion des certificats nécessaires aux échanges, avec séparation entre les environnements de test et de production.
+>     F2 – Gestion de la confiance : vérification des certificats partenaires, de leur validité et de leur renouvellement.
+>     F3 – Résolution SML : identification du SMP correspondant à un participant Peppol.
+>     F4 – Consultation SMP : récupération des métadonnées du destinataire, de son endpoint AS4 et du certificat associé.
+>     Publication de nos propres participants : mise en place d’un SMP déclaré au SML, permettant aux autres Access Points de trouver notre point d’accès pour acheminer les factures destinées à nos clients. La cohérence avec l’annuaire PPF devra être assurée lors de l’entrée ou de la sortie d’une société.
+>     F5 – Transport AS4 / ebMS3 : émission et réception des messages conformément aux spécifications Peppol applicables.
+>     F6 – Signatures et chiffrement : prise en charge des mécanismes de sécurité des messages à l’aide d’un composant éprouvé.
+>     F7 – Accusés de réception et anti-rejeu : gestion des receipts AS4, des doublons et des protections contre la réutilisation des messages.
+>     F8 – Réception AS4 : raccordement des messages entrants au pipeline métier existant, notamment b2bInboundPipelineUseCase, après vérification des adaptations nécessaires.
+>     F9 – Statuts du cycle de vie : émission et réception des statuts par le réseau, en complément de leur mise à jour dans VISIOfact. La couverture de b2b_cdv_service.py devra être vérifiée.
+>     F10 – Gestion des erreurs : distinction entre erreurs temporaires et définitives, nouvelles tentatives et rejeux contrôlés.
+>     F11 – Résilience et traçabilité : gestion des DLQ, supervision, suivi dans OpenSearch et reprise des échanges.
+>     F12 – Tests et qualification : tests de bout en bout des flux entrants et sortants, accusés de réception, statuts, erreurs et reprises. Les simulations locales devront être distinguées des tests d’interopérabilité réels et des éventuelles procédures officielles.
+>
+> Il faudra également prévoir la supervision permanente de l’endpoint public, les alertes, le renouvellement des certificats et les obligations de reporting statistique applicables, à confirmer auprès de l’autorité Peppol française.
+> 3. Options techniques envisagées
+>
+> Option A – Maintenir B2BRouter comme Access Point tiers
+>
+> Cette option consiste à conserver le transport actuellement utilisé en production pendant la préparation de la solution cible.
+>
+> Elle permet de préserver la continuité des échanges. Il faudra néanmoins confirmer les coûts, les conditions contractuelles, les éventuelles adaptations restantes et les responsabilités associées.
+>
+> La charge de développement supplémentaire reste à déterminer après vérification des travaux nécessaires. Les coûts du prestataire et les éventuels délais administratifs devront être précisés séparément.
+>
+> Option B – Préparer notre propre Access Point Peppol
+>
+> Cette option consiste à compléter native_pdp_provider en intégrant un composant AS4 open source éprouvé, puis à raccorder les flux entrants et sortants aux services métier existants.
+>
+> Les principales solutions à évaluer sont :
+>
+>     phase4 ou Oxalis : transport AS4/ebMS3 et mécanismes de sécurité associés ;
+>     phoss SMP : publication et gestion des métadonnées de nos participants ;
+>     VISIOfact / FastAPI : conservation des pipelines métier, de l’orchestration, des statuts et de la traçabilité ;
+>     OpenBao : protection des secrets et des clés privées, sous réserve de compatibilité avec le composant retenu.
+>
+> L’approche consisterait à intégrer le composant AS4, éventuellement dans un conteneur Java séparé, derrière OutboundTransportPort. Le travail porterait notamment sur l’adaptateur, le raccordement des flux entrants au pipeline métier, les statuts, les erreurs, la traçabilité et l’exploitation.
+>
+> L’objectif serait de réutiliser les développements existants et d’éviter de réimplémenter intégralement la couche AS4 en Python.
+> 4. Estimation prévisionnelle
+>
+> Pour l’option native, j’estime à ce stade la charge interne de développement et d’intégration à 25 à 30 jours ouvrés.
+>
+> Cette estimation couvre le périmètre F1 à F12, sous réserve de confirmer les fonctionnalités réutilisables, les adaptations nécessaires et les contraintes du composant retenu.
+>
+> Elle reste prévisionnelle et devra être affinée après comparaison de phase4 et d’Oxalis, évaluation de phoss SMP et analyse des écarts dans le code existant.
+>
+> Pour l’option B2BRouter, la charge complémentaire reste à déterminer selon les éventuelles adaptations et vérifications nécessaires. Les coûts contractuels devront également être pris en compte pour comparer les deux options.
+>
+> Les deux options devront donc être comparées en distinguant la charge interne, les coûts du prestataire et les dépendances externes.
+> 5. Démarches externes et contraintes d’exploitation
+>
+> Les démarches à confirmer avant de fixer le calendrier de mise en service comprennent notamment :
+>
+>     l’adhésion à OpenPeppol et l’accord de fournisseur de services avec l’autorité Peppol compétente ;
+>     les exigences particulières de l’autorité Peppol française ;
+>     l’obtention des certificats de test, les essais requis et l’obtention des certificats de production ;
+>     les obligations de supervision et de reporting ;
+>     les exigences de sécurité, notamment ISO 27001 et le calendrier applicable aux fournisseurs Peppol.
+>
+> La couverture éventuelle de certaines exigences par le certificat de DIGIpepss devra être confirmée. Les délais de ces démarches externes devront être planifiés séparément de la charge de développement interne.
+>
+> L’option native implique également plusieurs contraintes opérationnelles :
+>
+>     stocker la clé privée de production dans OpenBao, jamais dans GitLab ni dans les variables CI ;
+>     conserver les certificats de test en recette et ceux de production en production ;
+>     exposer et superviser en permanence l’endpoint public, avec les règles de filtrage réseau nécessaires ;
+>     prévoir l’ouverture du port requis et les ressources mémoire supplémentaires du conteneur Java, en tenant compte des 31 conteneurs actuels.
+>
+> Concernant le dossier DGFiP, les comptes rendus de tests d’interopérabilité sont facultatifs dans le formulaire d’immatriculation, selon les éléments que vous avez indiqués. Ce point ne bloque donc pas le dépôt du dossier à lui seul.
+>
+> La pièce 12 reste gelée conformément à la consigne de M. Friderich. Si l’option d’un Access Point tiers est retenue, le prestataire devra être déclaré dans la proposition, sans modifier cette pièce.
+> 6. Calendrier prévisionnel
+>
+> Le calendrier distingue les travaux internes des démarches externes :
+>
+>     Étude technique : comparaison des composants envisagés et vérification des fonctionnalités existantes.
+>     Consolidation : ajustement du périmètre, de l’estimation de la charge et du planning par lot.
+>     Développement et tests : intégration du composant retenu, raccordement des flux, traitement des statuts et des erreurs, puis vérification de la sécurité et de la supervision.
+>     Démarches externes : réalisation des démarches d’adhésion, obtention des certificats et exécution des éventuels tests de qualification, selon les exigences applicables et les délais des organismes.
+>     Mise en service : vérification des prérequis techniques et opérationnels avant toute bascule.
+>
+> Pour l’option native, la base de planification est de 25 à 30 jours ouvrés de travaux internes, sous réserve de l’étude détaillée. Pour l’option B2BRouter, la charge complémentaire reste à confirmer. Les délais externes devront être planifiés séparément.
+> 7. Environnement de test et passage en production
+>
+> Le développement du provider natif pourra être réalisé et testé sur l’environnement de staging, indépendamment de la production qui continue d’utiliser B2BRouter.
+>
+> La bascule vers le provider natif ne sera envisagée qu’après validation des fonctionnalités nécessaires, des échanges réels avec le réseau Peppol et des prérequis externes.
+>
+>  
+>
+> Je vous soumets cette proposition pour relecture, notamment concernant les deux options techniques, le périmètre à couvrir et les estimations prévisionnelles.
+>
+>
+> Bien cordialement,
+> Jean Elson .
+>
+>  
+>
+> Le 23/10/2026 à 10:03, Georgi Iliev a écrit :
+>
+>     Bonjour Jean Elson,
+>
+>      
+>
+>     Merci pour cette première proposition. J'ai regardé le code de develop : la couche Delivery et le port de transport sont bien en place, mais la partie Peppol se limite encore à des stubs. La production envoie aujourd'hui par B2Brouter (DELIVERY_MODE=b2brouter, PEPPOL_ENABLED=false). Voici mon avis sur vos quatre points.
+>
+>      
+>
+>     1. Périmètre. Il manque trois éléments.
+>
+>     - La publication de nos propres destinataires. F3 et F4 servent à trouver le point d'accès des autres. Pour recevoir, nos clients doivent être enregistrés dans un SMP déclaré au SML, avec notre point d'accès comme adresse, sinon aucune autre PA ne peut nous envoyer de facture par Peppol. Ce SMP doit rester cohérent avec l'annuaire PPF quand un client arrive ou part.
+>
+>     - L'échange des statuts du cycle de vie avec l'autre PA, dans les deux sens. F9 les répercute chez nous, il faut aussi les envoyer et les recevoir par le réseau.
+>
+>     - L'exploitation du point d'accès : supervision de l'adresse publique, alertes, renouvellement des certificats, et les obligations propres aux fournisseurs Peppol, dont les rapports statistiques à OpenPeppol, à confirmer dans les exigences de l'autorité Peppol française.
+>
+>      
+>
+>     2. Approche. Je déconseille d'écrire nous-mêmes la couche AS4 en Python à partir des stubs (ebMS3, signature et chiffrement WS-Security, accusés). C'est la partie la plus risquée, et à mon avis 15 à 20 jours ne suffiront pas à la rendre conforme et testée. Si nous exploitons notre propre point d'accès, il doit reposer sur un composant open source éprouvé, phase4 ou Oxalis, dans un conteneur à côté de l'API et branché derrière OutboundTransportPort, avec phoss SMP pour la publication. Notre travail devient alors une intégration : le composant fournit F5 à F8, il nous reste l'adaptateur, la réception vers le pipeline inbound, les statuts, les erreurs et les traces. L'autre option est de garder un point d'accès tiers, B2Brouter ou un autre, déjà en place et sans délai, la responsabilité réglementaire restant chez VISIOfact. Mon avis : B2Brouter pour l'immatriculation et la mise en service, puis notre propre point d'accès sur base open source quand les démarches Peppol seront faites. La décision revient à M. Friderich, il faut lui présenter les deux options chiffrées.
+>
+>      
+>
+>     3. Informations disponibles. Nous n'avons encore rien : pas d'adhésion OpenPeppol, pas de certificat, pas d'accès de test. Le parcours habituel est l'adhésion à OpenPeppol, l'accord de fournisseur de services signé avec l'autorité Peppol du pays, les certificats de test, les tests obligatoires, puis les certificats de production. Chaque autorité peut ajouter ses propres exigences, il faut lire celles de l'autorité française avant de fixer un calendrier. OpenPeppol prévoit aussi l'ISO 27001 obligatoire pour les fournisseurs d'ici octobre 2027. Le certificat de DIGIpepss couvre VISIOfact, ce point ne devrait donc pas bloquer.
+>
+>      
+>
+>     4. Autres contraintes.
+>
+>     - Le calendrier dépendra surtout des démarches externes (adhésion, accord, tests, certificats), dont nous ne maîtrisons pas les délais.
+>
+>     - Pour l'immatriculation, les comptes rendus de tests d'interopérabilité sont facultatifs dans le formulaire de la DGFiP. Ce chantier ne bloque donc pas le dépôt du dossier.
+>
+>     - La clé privée du point d'accès est un secret de production. Je la poserai dans OpenBao, jamais dans GitLab ni dans les variables CI. Les certificats de test restent sur la recette, ceux de production sur la production.
+>
+>     - Le point d'accès est une adresse publique ouverte en permanence sur le serveur de production. Il faudra ouvrir le port dans le filtrage et prévoir la mémoire d'un conteneur Java en plus des 31 conteneurs actuels.
+>
+>     - Les pièces du dossier sont gelées par M. Friderich, la pièce 12 ne change pas. Si l'option du point d'accès tiers est retenue, ce prestataire devra être déclaré dans le dossier. Ce point ira dans la proposition, pas dans les documents.
+>
+>      
+>
+>     Pouvez-vous reprendre votre proposition avec les deux options, la charge de chacune, les démarches externes et un calendrier, d'ici mardi 27 octobre ? Je la relis le jour même et nous l'envoyons ensemble à M. Friderich, comme il l'a demandé le 20 octobre.
+>
+>      
+>
+>     Bien cordialement,
+>
+>     Georgi Iliev
+>
+>      
+>
+>
+>
+>         On 22 Oct 2026, at 17:55, Jean Elson <jean.elson.razafimahafaly@digilium.pro> wrote:
+>
+>          
+>
+>         Bonjour M. Iliev,
+>
+>         Suite au message de M. Friderich concernant l’interopérabilité native de VISIOfact, j’ai préparé une première proposition des développements à prévoir, avec une estimation de la charge et les points qui restent à clarifier.
+>
+>         L’objectif est de voir comment compléter notre solution actuelle pour gérer les échanges Peppol en natif, tout en identifiant les éventuelles contraintes techniques et externes avant de fixer un calendrier.
+>
+>         1. Développements à prévoir
+>
+>         Notre architecture prévoit déjà une couche Delivery indépendante, avec la possibilité de sélectionner le provider B2Brouter (b2brouter_provider) ou le provider natif (native_pdp_provider) à l’aide du paramètre DELIVERY_MODE.
+>
+>         L’approche envisagée consiste à compléter le provider natif pour prendre en charge les échanges AS4, la résolution SMP/SML et la gestion des certificats. Cela permettrait de conserver l’organisation actuelle et de préparer une transition progressive depuis B2Brouter, sans avoir à reconstruire toute la partie Delivery.
+>
+>         Voici les principales fonctionnalités à couvrir :
+>
+>             F1 – Certificats Access Point : configurer et utiliser les certificats nécessaires aux échanges réels.
+>             F2 – Gestion de la confiance : vérifier les certificats des partenaires et prévoir leur renouvellement.
+>             F3 – Résolution SML : retrouver le SMP associé à un participant Peppol.
+>             F4 – Accès SMP : récupérer les métadonnées du destinataire, son endpoint AS4 et son certificat.
+>             F5 – Messages AS4 : construire et envoyer les messages ebMS3 UserMessage conformément aux exigences Peppol applicables.
+>             F6 – Signatures : mettre en place la signature et la vérification cryptographique des messages.
+>             F7 – Accusés de réception : gérer les receipts AS4 et empêcher le traitement répété d’un même message.
+>             F8 – Réception AS4 : mettre en place la réception native des messages et leur transmission au traitement inbound.
+>             F9 – Statuts et notifications : répercuter les résultats des échanges dans les statuts CDV et les notifications VISIOfact.
+>             F10 – Gestion des erreurs : distinguer les erreurs temporaires des erreurs définitives et prévoir les nouvelles tentatives d’envoi.
+>             F11 – Résilience et traçabilité : gérer les files d’erreurs (DLQ), le rejeu contrôlé des messages et les traces dans OpenSearch.
+>             F12 – Tests de bout en bout : tester les échanges avec un AP de recette local (mock), puis avec un AP tiers open source. Des essais bilatéraux ou officiels pourront ensuite être nécessaires pour réunir les preuves attendues pour la pièce 12.
+>
+>         Les premiers tests pourront ainsi avancer sans attendre la disponibilité d’un partenaire externe. Ils permettront de vérifier le fonctionnement technique, mais ne remplaceront pas les éventuelles étapes officielles de qualification.
+>
+>         2. Estimation de la charge
+>
+>         J’estime la charge des développements internes entre 15 et 20 jours, pour compléter le provider natif, intégrer les échanges AS4 et la résolution SMP/SML, gérer les certificats, les accusés de réception et les erreurs, puis réaliser les tests techniques.
+>
+>         Cette estimation porte sur les développements internes. Les démarches de conformité, l’obtention des certificats et des accès, ainsi que les essais nécessitant la disponibilité de partenaires externes ne sont pas inclus dans ce délai. La charge pourra être ajustée si des développements supplémentaires sont nécessaires ou si les tests révèlent des difficultés particulières.
+>
+>         3. Choix de l’approche et dépendances externes
+>
+>         Deux possibilités sont à étudier :
+>
+>             Développer et exploiter notre propre Access Point : nous garderions la maîtrise technique des échanges, mais devrions prendre en charge les exigences nécessaires à son exploitation et à sa conformité.
+>             Passer par un Access Point Peppol tiers : cette solution pourrait réduire une partie des développements, mais il faudrait vérifier les coûts, les conditions d’utilisation, les responsabilités et la compatibilité avec notre architecture cible.
+>
+>         Il reste notamment à déterminer quelle approche convient le mieux à notre statut de PAPA et quelles conditions s’appliquent aux certificats, aux environnements de test et à la qualification.
+>
+>         4. Points sur lesquels j’aurais besoin de votre avis
+>
+>         Pourriez-vous me préciser les points suivants ?
+>
+>             Le périmètre F1 à F12 vous paraît-il suffisant, ou manque-t-il des fonctionnalités importantes ?
+>             Selon vous, est-il préférable de compléter notre provider natif pour exploiter notre propre Access Point, ou d’étudier en priorité une solution Peppol tierce ?
+>             Avons-nous déjà des informations sur les conditions de qualification, les certificats, les accès aux environnements de test ou les fournisseurs envisageables ?
+>             Voyez-vous d’autres contraintes techniques, administratives ou opérationnelles à prendre en compte avant de confirmer la charge et le calendrier ?
+>
+>         Avec votre retour, je pourrai préciser le périmètre des développements, intégrer les éventuelles dépendances externes et préparer une estimation plus fiable .
+>
+>
+>         Bien cordialement,
+>         Jean Elson
+>
+>          
