@@ -163,18 +163,40 @@ export const VisiofactView: React.FC<VisiofactViewProps> = ({ activeViewId }) =>
         <div className="h-8 w-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
           <Scale className="w-4 h-4" />
         </div>
-        <div className="space-y-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-bold text-sm text-slate-900 dark:text-white">
-              Projet VISIOfact · Point d'Accès Peppol & Candidature PDP
-            </span>
-            <Badge label="DGFiP Début Janvier 2027" variant="success" size="sm" />
-            <Badge label="B2Brouter Opérationnel en Prod" variant="info" size="sm" />
+        <div className="space-y-1 flex-1">
+          <div className="flex items-center gap-2 flex-wrap justify-between">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-sm text-slate-900 dark:text-white">
+                Projet VISIOfact · Point d'Accès Peppol & Candidature PDP
+              </span>
+              <Badge label="DGFiP Début Janvier 2027" variant="success" size="sm" />
+              <Badge label="B2Brouter Opérationnel en Prod" variant="info" size="sm" />
+            </div>
+            <button
+              onClick={() => {
+                const text = `Projet VISIOfact : B2Brouter en production active (10 jours réalisés), sécurisant le dépôt du dossier DGFiP début janvier 2027 sans bloquer CaptureMind.
+Accès Peppol Natif : Développement prévu en 25 à 30 jours ouvrés (conteneur Java autonome phase4 / ebMS3 AS4 sous licence Apache 2.0 permissive, phoss SMP sous MPL 2.0), garantissant une autonomie complète sans redevance tierce ni contamination du code propriétaire.
+Calendrier & Stratégie : 27 jours de socle PDP déjà validés en production (TECT OEC / ONLYCOMPTA). Enchaînement des travaux : CaptureMind HUB en priorité absolue (25-30j), puis déploiement de l'accès Peppol natif VISIOfact en temps masqué ou en parallèle.`;
+                navigator.clipboard.writeText(text);
+                alert('Briefing VISIOfact copié dans le presse-papier !');
+              }}
+              className="px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-sm transition-all flex items-center gap-1.5 cursor-pointer"
+            >
+              <Copy className="w-3.5 h-3.5" />
+              <span>Copier Briefing</span>
+            </button>
           </div>
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-xs">
             27 jours de socle PDP déjà validés en production (TECT OEC / ONLYCOMPTA activé). Maintien temporaire de la passerelle B2Brouter pour sécuriser le dépôt légal sans bloquer CaptureMind.
           </p>
         </div>
+      </div>
+
+      {/* Unified VISIOfact Briefing Block (Unseparated) */}
+      <div className="text-slate-200 text-xs font-mono leading-relaxed whitespace-pre-wrap p-4 rounded-xl bg-slate-900 border border-slate-800 shadow-inner">
+Projet VISIOfact : B2Brouter en production active (10 jours réalisés), sécurisant le dépôt du dossier DGFiP début janvier 2027 sans bloquer CaptureMind.
+Accès Peppol Natif : Développement prévu en 25 à 30 jours ouvrés (conteneur Java autonome phase4 / ebMS3 AS4 sous licence Apache 2.0 permissive, phoss SMP sous MPL 2.0), garantissant une autonomie complète sans redevance tierce ni contamination du code propriétaire.
+Calendrier & Stratégie : 27 jours de socle PDP déjà validés en production (TECT OEC / ONLYCOMPTA). Enchaînement des travaux : CaptureMind HUB en priorité absolue (25-30j), puis déploiement de l'accès Peppol natif VISIOfact en temps masqué ou en parallèle.
       </div>
 
       {/* ======================================================== */}

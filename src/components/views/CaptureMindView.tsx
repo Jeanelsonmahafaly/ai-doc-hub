@@ -20,7 +20,8 @@ import {
   Send,
   Sparkles,
   FileText,
-  HelpCircle
+  HelpCircle,
+  Target
 } from 'lucide-react';
 import {
   ResponsiveContainer,
@@ -67,13 +68,13 @@ export const CaptureMindView: React.FC<CaptureMindViewProps> = ({
   onSubTabChange
 }) => {
   // Sub-tabs for Conception
-  const [internalSubTab, setInternalSubTab] = useState<'planning-30j' | 'archi-microservices' | 'contrats-api' | 'matrice-flux' | 'recette-j30'>(
-    (activeSubTabId as any) || 'planning-30j'
+  const [internalSubTab, setInternalSubTab] = useState<'objectifs-contexte' | 'planning-30j' | 'archi-microservices' | 'contrats-api' | 'matrice-flux' | 'recette-j30'>(
+    (activeSubTabId as any) || 'objectifs-contexte'
   );
 
   const currentSubTab = activeSubTabId || internalSubTab;
 
-  const handleSubTabChange = (tab: 'planning-30j' | 'archi-microservices' | 'contrats-api' | 'matrice-flux' | 'recette-j30') => {
+  const handleSubTabChange = (tab: 'objectifs-contexte' | 'planning-30j' | 'archi-microservices' | 'contrats-api' | 'matrice-flux' | 'recette-j30') => {
     setInternalSubTab(tab);
     if (onSubTabChange) onSubTabChange(tab);
   };
@@ -301,22 +302,43 @@ Clarification / Note : ${auditNotes[q.id] || q.clarification}
   return (
     <div className="space-y-6">
 
-      {/* Project Context Summary Card */}
-      <div className="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 flex items-start gap-3.5 text-xs">
-        <div className="h-8 w-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-          <Cpu className="w-4 h-4" />
-        </div>
-        <div className="space-y-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-bold text-sm text-slate-900 dark:text-white">
-              Projet CaptureMind HUB · Traitement 100% en RAM
-            </span>
-            <Badge label="Priorité #1 · 25–30 jours ouvrés" variant="indigo" size="sm" />
-            <Badge label="Zéro stockage permanent" variant="success" size="sm" />
+      {/* Project Context & Operational Brief Summary Card */}
+      <div className="p-5 rounded-2xl bg-indigo-50 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 space-y-3 text-xs">
+        <div className="flex items-start gap-3.5">
+          <div className="h-9 w-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+            <Cpu className="w-5 h-5" />
           </div>
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed text-xs">
-            FERnest héberge la GED et reste la source officielle. CaptureMind est un HUB de transit qui analyse en mémoire vive, prépare les écritures comptables équilibrées, et libère instantanément la RAM dès restitution.
-          </p>
+          <div className="space-y-1.5 flex-1">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-sm text-slate-900 dark:text-white">
+                Projet CaptureMind HUB · Résolution VUL-001 & Banc d'Essai LexIA GPU (J5 en cours)
+              </span>
+              <Badge label="Priorité #1 · 25–30 j.o." variant="indigo" size="sm" />
+              <Badge label="J5 : Serveur LexIA & PaddleOCR/Qwen" variant="warning" size="sm" />
+              <Badge label="Zéro Stockage Disque" variant="success" size="sm" />
+            </div>
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+              <strong>Problème résolu :</strong> OpenCapture écrivait les factures sur le disque Hetzner (<code className="font-mono text-indigo-700 dark:text-indigo-300">/var/docservers</code> saturé à ~97%). 
+              <strong>Solution :</strong> CaptureMind HUB, hub de transit 100% en RAM volatile (<code className="font-mono text-indigo-700 dark:text-indigo-300">io.BytesIO</code>, 0 octet persisté). FERnest reste la GED officielle.
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-3 border-t border-indigo-200 dark:border-indigo-800 grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px]">
+          <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-indigo-100 dark:border-indigo-900">
+            <span className="font-bold text-indigo-900 dark:text-indigo-300 block">J1 à J4 (Terminés) :</span>
+            <span className="text-slate-700 dark:text-slate-200">Audit codebase, arbitrage orientations, extraction du corpus 100 factures, et envoi des messages à M. Flore.</span>
+          </div>
+
+          <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-indigo-100 dark:border-indigo-900">
+            <span className="font-bold text-indigo-900 dark:text-indigo-300 block">J5 Actuel (En cours) :</span>
+            <span className="text-slate-700 dark:text-slate-200">Serveur LexIA (RTX 4000 Ada, 20 Go VRAM) configuré avec PaddleOCR et Qwen. Micro-service d'inférence en cours de test.</span>
+          </div>
+
+          <div className="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-indigo-100 dark:border-indigo-900">
+            <span className="font-bold text-indigo-900 dark:text-indigo-300 block">Banc d'Essai 100 Factures :</span>
+            <span className="text-slate-700 dark:text-slate-200">Évaluation des 3 approches (Multimodal, OCR+LLM, Hybride) : &lt;5s / facture, &gt;90% exactitude, 0 erreur.</span>
+          </div>
         </div>
       </div>
 
@@ -328,6 +350,18 @@ Clarification / Note : ${auditNotes[q.id] || q.clarification}
           
           {/* Sub-navigation bar (Unified single row, high contrast active state) */}
           <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 overflow-x-auto custom-scrollbar">
+            <button
+              onClick={() => handleSubTabChange('objectifs-contexte')}
+              className={`px-3.5 py-2 rounded-lg text-xs font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+                currentSubTab === 'objectifs-contexte'
+                  ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950 shadow-md'
+                  : 'text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-300/60 dark:hover:bg-slate-700'
+              }`}
+            >
+              <Target className="w-4 h-4 text-indigo-400 dark:text-indigo-600" />
+              <span>Objectifs & VUL-001</span>
+            </button>
+
             <button
               onClick={() => handleSubTabChange('planning-30j')}
               className={`px-3.5 py-2 rounded-lg text-xs font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
@@ -388,6 +422,107 @@ Clarification / Note : ${auditNotes[q.id] || q.clarification}
               <span>Recette J+30</span>
             </button>
           </div>
+
+          {/* SUB-TAB 0 : OBJECTIFS & CONTEXTE VUL-001 */}
+          {currentSubTab === 'objectifs-contexte' && (
+            <div className="space-y-6">
+              <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+                  <div>
+                    <h1 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                      <Target className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                      Objectifs Stratégiques, Résolution VUL-001 & Briefing Technique
+                    </h1>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                      Cahier des charges complet, banc d'essai LexIA GPU et questions d'architecture (J5).
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const text = `PROBLÈME : OpenCapture écrit les factures sur disque, et le disque de Hetzner (/var/docservers) est saturé à 97 % (VUL-001).
+SOLUTION : CaptureMind HUB, un hub de transit 100 % en RAM, zéro octet persisté. FERnest reste la GED et la source officielle ; CaptureMind analyse, prépare les écritures comptables et libère la mémoire dès validation.
+CE QU’ON CONSTRUIT MAINTENANT : le micro-service d’IA documentaire (FastAPI) sur le GPU partagé LexIA (RTX 4000 Ada, 20 Go), qui lit les factures (PDF ou images) et renvoie un JSON.
+LE BANC D’ESSAI : 100 factures réelles (30 Factur-X natifs, 40 scans, 30 complexes) pour choisir entre trois approches (multimodal, OCR puis LLM, hybride). Objectifs : moins de 5 s par facture, plus de 90 % d’exactitude, moins de 20 Go de VRAM, 0 erreur.
+ENSUITE : sortie au contrat du HUB, rapprochement des tiers (SIREN, Levenshtein) avec les règles de M. Flore, imputation 60x/70x, XML historique pour FERnest, puis la phase 2 (agent IA, Alphonse).
+EN PARALLÈLE : VISIOfact (B2Brouter en production, accès Peppol natif en 25-30 jours, dossier DGFiP en janvier 2027).
+OBJECTIF RÉCENT : Traiter beaucoup de factures en parallèle, avec des résultats enrichis (aiguillage Factur-X, traitement par lots [vLLM], enrichissement côté HUB).
+HYPOTHÈSES : 1. Le contrat de sortie attendu est celui du hub (status, datas, scores, anomalies). 2. Transit réseau chiffré et sans stockage vers LexIA à valider ISO 27001. 3. Le choix du moteur se fait sur les chiffres de LexIA.
+QUESTION CLÉ : Quel volume faut-il tenir en production (factures par jour, et par heure de pointe) ?`;
+                      navigator.clipboard.writeText(text);
+                      alert('Briefing copié dans le presse-papier !');
+                    }}
+                    className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm transition-all flex items-center gap-2 cursor-pointer shrink-0"
+                  >
+                    <Copy className="w-4 h-4 text-white" />
+                    <span>Copier ce Briefing</span>
+                  </button>
+                </div>
+
+                {/* Comprehensive User Briefing Box */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-slate-900 text-slate-100 font-mono text-xs space-y-4 border border-slate-800 shadow-inner leading-relaxed">
+                  <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <span className="font-bold text-emerald-400 flex items-center gap-2">
+                      <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      CADRAGE & CAHIER DES CHARGES OPÉRATEUR (CAPTUREMIND HUB & VISIOFACT)
+                    </span>
+                    <span className="text-[11px] text-slate-400 font-mono">Statut : J5 Actuel</span>
+                  </div>
+
+                  <div className="text-slate-200 text-xs font-mono leading-relaxed whitespace-pre-wrap p-4 rounded-xl bg-slate-800/90 border border-slate-700/80">
+Problème : OpenCapture écrit les factures sur disque, et le disque de Hetzner (/var/docservers) est saturé à 97 % (VUL-001).
+Solution : CaptureMind HUB, un hub de transit 100 % en RAM, zéro octet persisté. FERnest reste la GED et la source officielle ; CaptureMind analyse, prépare les écritures comptables et libère la mémoire dès validation.
+Ce qu’on construit maintenant : le micro-service d’IA documentaire (FastAPI) sur le GPU partagé LexIA (RTX 4000 Ada, 20 Go), qui lit les factures (PDF ou images) et renvoie un JSON.
+Le banc d’essai : 100 factures réelles (30 Factur-X natifs, 40 scans, 30 complexes) pour choisir entre trois approches (multimodal, OCR puis LLM, hybride). Objectifs : moins de 5 s par facture, plus de 90 % d’exactitude, moins de 20 Go de VRAM, 0 erreur.
+Ensuite : sortie au contrat du HUB, rapprochement des tiers (SIREN, Levenshtein) avec les règles de M. Flore, imputation 60x/70x, XML historique pour FERnest, puis la phase 2 (agent IA, Alphonse).
+En parallèle : VISIOfact (B2Brouter en production, accès Peppol natif en 25-30 jours, dossier DGFiP en janvier 2027).
+
+Votre objectif plus récent
+Traiter beaucoup de factures en parallèle, avec des résultats enrichis. D’où mes propositions : aiguillage Factur-X, traitement par lots (vLLM), enrichissement côté HUB.
+
+Ce que je suppose sans en être sûr
+Le contrat de sortie attendu est celui du hub (status, datas, scores, anomalies), pas notre JSON plat actuel.
+Les factures partent de Hetzner vers LexIA (serveur partagé) : cela suppose un transit réseau chiffré et sans stockage, à valider côté ISO 27001.
+Le choix du moteur se fait sur les chiffres de LexIA, pas sur les tests locaux.
+
+La question qui change le plus l’architecture : quel volume faut-il tenir en production (factures par jour, et par heure de pointe) ? Sans ce chiffre, je ne peux pas dire si un traitement séquentiel suffit ou s’il faut le parallèle avec vLLM.
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs">
+                  {/* Problem & Solution */}
+                  <div className="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
+                    <h2 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-rose-500"></span>
+                      Problème (VUL-001) & Solution Cible
+                    </h2>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                      <strong>Problème :</strong> OpenCapture écrivait les factures sur le système de fichiers, entraînant une saturation critique du disque Hetzner (<code className="font-mono text-rose-700 dark:text-rose-300">/var/docservers</code> à ~97%).
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                      <strong>Solution :</strong> <strong>CaptureMind HUB</strong>, un hub de transit 100 % en mémoire vive volatile (<code className="font-mono text-emerald-700 dark:text-emerald-300">io.BytesIO</code>, 0 octet persisté). FERnest reste l'unique GED et source officielle.
+                    </p>
+                  </div>
+
+                  {/* Current Milestone J5 & LexIA GPU */}
+                  <div className="p-5 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 space-y-3">
+                    <h2 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                      Étape Actuelle (J5) : Serveur LexIA GPU
+                    </h2>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                      Mise en place du micro-service d’IA documentaire (FastAPI) sur le GPU partagé <strong>LexIA</strong> (NVIDIA RTX 4000 Ada, 20 Go VRAM).
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                      Intégration de <strong>PaddleOCR</strong> et <strong>Qwen</strong> pour lire les factures (PDF ou images) et générer les structures JSON normalisées.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          )}
 
           {/* SUB-TAB 1 : PLANNING 30 JOURS */}
           {currentSubTab === 'planning-30j' && (

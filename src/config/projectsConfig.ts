@@ -33,6 +33,7 @@ export const PROJECTS: ProjectConfig[] = [
         description: 'Feuille de route 30 jours, architecture technique stateless, contrats API et recette finale',
         badge: 'J1-J30',
         subTabs: [
+          { id: 'objectifs-contexte', label: 'Objectifs & VUL-001', icon: 'Target' },
           { id: 'planning-30j', label: 'Planning 30j', icon: 'Calendar' },
           { id: 'archi-microservices', label: 'Architecture', icon: 'Cpu' },
           { id: 'contrats-api', label: 'Contrats API', icon: 'Code2' },

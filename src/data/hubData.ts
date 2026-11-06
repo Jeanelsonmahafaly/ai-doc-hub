@@ -204,10 +204,10 @@ export const full30DaysPlan: DayPlanItem[] = [
     phase: 'Phase 0 : Audit & Cadrage',
     phaseColor: 'bg-slate-800/50 text-slate-400 border-slate-700',
     title: 'Extraction du corpus des 100 factures réelles',
-    description: 'Extraction depuis /var/docservers/verifier/original_doc/ sur Hetzner (30 Factur-X/PDF natifs, 40 scans, 30 cas complexes).',
+    description: 'Extraction depuis /var/docservers/verifier/original_doc/ sur Hetzner (30 Factur-X/PDF natifs, 40 scans, 30 cas complexes). Corpus validé et prêt.',
     deliverable: 'Archive corpus_test_100/ disponible pour le banc d’essai.',
     owner: 'Équipe Infra',
-    status: 'Bloquant'
+    status: 'Terminé'
   },
   {
     day: 4,
@@ -216,10 +216,10 @@ export const full30DaysPlan: DayPlanItem[] = [
     phase: 'Phase 0 : Audit & Cadrage',
     phaseColor: 'bg-slate-800/50 text-slate-400 border-slate-700',
     title: 'Récupération des référentiels comptables chez M. Flore',
-    description: 'Extraction des tables PostgreSQL existantes (accounting_plan, accounts_supplier, accounts_customer) et règles de TVA.',
-    deliverable: 'Dump SQL / JSON des plans de comptes et tiers qualifiés.',
+    description: 'Message envoyé à M. Flore. Extraction des tables PostgreSQL (accounting_plan, accounts_supplier, accounts_customer) et règles TVA confirmées.',
+    deliverable: 'Dump SQL / JSON des plans de comptes et tiers qualifiés transmis.',
     owner: 'M. Flore & Jean Elson',
-    status: 'En cours'
+    status: 'Terminé'
   },
   {
     day: 5,
@@ -227,11 +227,11 @@ export const full30DaysPlan: DayPlanItem[] = [
     week: 1,
     phase: 'Phase 0 : Audit & Cadrage',
     phaseColor: 'bg-slate-800/50 text-slate-400 border-slate-700',
-    title: 'Préparation du serveur GPU LexIA avec Alphonse',
-    description: 'Vérification de l’environnement NVIDIA RTX 4000 Ada (20 Go VRAM), drivers CUDA 12, PyTorch et venv Python pour les tests.',
-    deliverable: 'Serveur LexIA prêt et accessible pour le banc d’essai.',
+    title: 'Préparation du serveur GPU LexIA & Micro-service FastAPI',
+    description: 'Serveur LexIA (NVIDIA RTX 4000 Ada - 20 Go VRAM) configuré. Intégration de PaddleOCR et Qwen pour le déploiement du micro-service d’inférence et lancement du test du banc d’essai.',
+    deliverable: 'Micro-service d’inférence prêt pour le banc d’essai 100 factures.',
     owner: 'Alphonse & Jean Elson',
-    status: 'Priorité Immédiate'
+    status: 'En cours'
   },
 
   // SEMAINE 2 : PHASE 1 — BANC D'ESSAI COMPARATIF GPU (Du Lundi 09/11 au Vendredi 13/11/2026)
